@@ -1,3 +1,4 @@
+
 import java.util.List;
 
 public class ProblemAndSolution {
@@ -23,5 +24,6 @@ public class ProblemAndSolution {
     public String getSolution() {
         return solution;
     }
-
 }
+
+
