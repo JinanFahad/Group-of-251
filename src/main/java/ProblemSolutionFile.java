@@ -1,11 +1,11 @@
 
 import java.io.*;
+
 import java.util.*;
 
 public class ProblemSolutionFile {
 
-  
-    private String PathOfFile = "ProblemSolution.txt" ;
+    private String PathOfFile = "ProblemSolution.txt";
 
     public ProblemSolutionFile(String filePath) {
         this.PathOfFile = filePath;
@@ -16,7 +16,7 @@ public class ProblemSolutionFile {
         BufferedReader reader = new BufferedReader(new FileReader(PathOfFile));
         String line;
         while ((line = reader.readLine()) != null) {
-            String[] parts = line.split("\\|", 3); 
+            String[] parts = line.split("\\|", 3);
             if (parts.length == 3) {
                 String description = parts[0];
                 List<String> keywords = Arrays.asList(parts[1].split(","));
