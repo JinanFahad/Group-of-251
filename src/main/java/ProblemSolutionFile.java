@@ -35,4 +35,17 @@ public class ProblemSolutionFile {
         writer.close();
     }
 
+    public void updateProblem(ProblemAndSolution updatedProblem) throws IOException {
+        List<ProblemAndSolution> problemList = readProblems();
+        BufferedWriter writer = new BufferedWriter(new FileWriter(PathOfFile));
+        for (ProblemAndSolution problem : problemList) {
+            if (problem.getProblemDescription().equals(updatedProblem.getProblemDescription())) {
+                writer.write(updatedProblem.getProblemDescription() + "|" + String.join(",", updatedProblem.getKeywords()) + "|" + updatedProblem.getSolution());
+            } else {
+                writer.write(problem.getProblemDescription() + "|" + String.join(",", problem.getKeywords()) + "|" + problem.getSolution());
+            }
+            writer.newLine();
+        }
+        writer.close();
+    }
 }
