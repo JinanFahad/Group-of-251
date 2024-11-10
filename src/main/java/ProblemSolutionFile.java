@@ -28,4 +28,11 @@ public class ProblemSolutionFile {
         reader.close();
         return problemList;
     }
+    public void writeProblem(ProblemAndSolution problem) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(PathOfFile, true));
+        writer.write(problem.getProblemDescription() + "|" + String.join(",", problem.getKeywords()) + "|" + problem.getSolution());
+        writer.newLine();
+        writer.close();
+    }
+
 }
