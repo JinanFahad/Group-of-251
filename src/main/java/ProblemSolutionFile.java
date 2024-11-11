@@ -12,6 +12,7 @@ public class ProblemSolutionFile {
         this.PathOfFile = filePath;
     }
 
+//-------------------------------------------------------------------------------------------------------      
     public List<ProblemAndSolution> readProblems() throws IOException {
         List<ProblemAndSolution> problemList = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader(PathOfFile));
@@ -28,13 +29,14 @@ public class ProblemSolutionFile {
         reader.close();
         return problemList;
     }
+//-------------------------------------------------------------------------------------------------------   
     public void writeProblem(ProblemAndSolution problem) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(PathOfFile, true));
         writer.write(problem.getProblemDescription() + "|" + String.join(",", problem.getKeywords()) + "|" + problem.getSolution());
         writer.newLine();
         writer.close();
     }
-
+//-------------------------------------------------------------------------------------------------------   
     public void updateProblem(ProblemAndSolution updatedProblem) throws IOException {
         List<ProblemAndSolution> problemList = readProblems();
         BufferedWriter writer = new BufferedWriter(new FileWriter(PathOfFile));
@@ -48,4 +50,16 @@ public class ProblemSolutionFile {
         }
         writer.close();
     }
+//-------------------------------------------------------------------------------------------------------   
+public List<ProblemAndSolution> searchInFile(String keyword) throws IOException {
+    List<ProblemAndSolution> problems = readProblems();
+    List<ProblemAndSolution> matchingProblems = new ArrayList<>();
+    for (ProblemAndSolution problem : problems) {
+        if (problem.getKeywords().contains(keyword.toLowerCase())) {
+            matchingProblems.add(problem);
+        }
+    }
+    return matchingProblems;
+ }    
 }
+  
