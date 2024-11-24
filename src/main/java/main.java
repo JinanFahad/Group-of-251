@@ -2,6 +2,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Arrays;
+
+
 
 public class main {
 
@@ -39,7 +42,41 @@ public class main {
                 int technicianChoice = scanner.nextInt();
                 scanner.nextLine(); 
 
-                //switch implementation left
+                switch (technicianChoice) {
+                    case 1:
+                        System.out.print("Enter problem description: ");
+                        String newDescription = scanner.nextLine();
+                        System.out.print("Enter keywords (comma-separated): ");
+                        String keywordsInput = scanner.nextLine();
+                        List<String> keywords = Arrays.asList(keywordsInput.split(","));
+                        System.out.print("Enter solution: ");
+                        String solution = scanner.nextLine();
+                        ProblemAndSolution newProblem = new ProblemAndSolution(newDescription, keywords, solution);
+                        supportTeam.addProblem(newProblem);
+                        break;
+                    case 2:
+                        System.out.print("Enter the problem description to update: ");
+                        String updateDescription = scanner.nextLine();
+                        System.out.print("Enter new keywords (comma-separated): ");
+                        String updateKeywordsInput = scanner.nextLine();
+                        List<String> updateKeywords = Arrays.asList(updateKeywordsInput.split(","));
+                        System.out.print("Enter new solution: ");
+                        String updateSolution = scanner.nextLine();
+                        ProblemAndSolution updatedProblem = new ProblemAndSolution(updateDescription, updateKeywords, updateSolution);
+                        supportTeam.updateProblem(updatedProblem);
+                        break;
+                    case 3:
+                        System.out.print("Enter the problem description to delete: ");
+                        String deleteDescription = scanner.nextLine();
+                        supportTeam.deleteProblem(deleteDescription);
+                        break;
+                    case 4:
+                        continueRunning = false;
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                        break;
+                }
                 
             }
         } else {
