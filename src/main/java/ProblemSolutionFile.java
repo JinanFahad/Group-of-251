@@ -60,6 +60,19 @@ public List<ProblemAndSolution> searchInFile(String keyword) throws IOException 
         }
     }
     return matchingProblems;
- }    
+ }  
+//-------------------------------------------------------------------------------------------------------   
+public void deleteProblem(String problemDescription) throws IOException {
+        List<ProblemAndSolution> problemList = readProblems();
+        BufferedWriter writer = new BufferedWriter(new FileWriter(PathOfFile));
+        for (ProblemAndSolution problem : problemList) {
+            // Write back all problems except the one with the matching description
+            if (!problem.getProblemDescription().equalsIgnoreCase(problemDescription)) {
+                writer.write(problem.getProblemDescription() + "|" + String.join(",", problem.getKeywords()) + "|" + problem.getSolution());
+                writer.newLine();
+            }
+        }
+        writer.close();
+    }
 }
   

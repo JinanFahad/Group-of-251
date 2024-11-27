@@ -29,10 +29,13 @@ public class SupportTechnician {
             System.out.println("An error occurred while updating the problem.");
         }
     }
-
-    public void deleteProblem(String problemId) {
-
-        System.out.println("Problem deletion functionality is not yet implemented.");
+//---------------------------------------------------------------------------------------
+public void deleteProblem(String problemDescription) {
+        try {
+            problemSolutionFile.deleteProblem(problemDescription);
+            System.out.println("Problem deleted successfully.");
+        } catch (IOException e) {
+            System.out.println("An error occurred while deleting the problem: " + e.getMessage());
+        }
     }
-
 }
