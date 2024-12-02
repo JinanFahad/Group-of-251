@@ -1,1 +1,40 @@
-Network connection issue|network,connectivity|Restart the router and check the network cable.
+Problem: email archive
+Keywords: email, archive
+Solution: Go to "File" -> "Info" -> "Cleanup Tools" -> "Archive" to select the folder you want to archive.
+
+Problem: Changing Passwords
+Keywords: change password, password, security
+Solution: Use one of the following methods: 1) Security Interface (Ctrl + Alt + Delete). 2) Webmail (navigate to Settings -> Change Password). 3) Using the employee services link on the official site.
+
+Problem: Email Working in Offline Mode
+Keywords: email, offline, offline mode
+Solution: Go to the "Send/Receive" tab in Outlook and ensure the "Work Offline" icon is not highlighted.
+
+Problem: Adding Folders in Email Application
+Keywords: add folder, email, email folder
+Solution: Right-click on the main folder in Outlook and select "New Folder" to add a custom folder.
+
+Problem: Adding Desktop Shortcuts
+Keywords: desktop, shortcut, add shortcut
+Solution: To add a website shortcut: Open the browser, navigate to the website, click "File" -> "Send" -> "Shortcut to Desktop".
+
+Problem: Adding Arabic Language Support
+Keywords: Add Arabic language, typing, language settings, arabic, language, add language
+Solution: Go to "Settings" -> "Language & Time" -> "Add Language" -> Select "Arabic (Saudi Arabia)" -> Install.
+
+Problem: Converting Numbers to Arabic Format
+Keywords: Arabic numbers, number, number format
+Solution: Open "Control Panel" -> "Clock and Region" -> "Change date, time, or number formats" -> Click on "Additional Settings" and select "Use native digits" under the numbers tab.
+
+Problem: Handling Frozen Applications
+Keywords: Frozen applications, not responding, unresponsive, frozen
+Solution: Press Ctrl + Alt + Delete, open the security interface, and choose "Task Manager". Select the unresponsive application and click "End Task".
+
+Problem: Scanner or Printer Not Working
+Keywords: Printer not working, scanner issue, connectivity, printer issue, printer, scanner issue, scanner, scanner not working
+Solution: Ensure all cables are properly connected between the computer and the printer/scanner. If the issue persists, open a new support request through the "Sahl" system.
+
+Problem: Non-Functioning Municipality Systems in Browser
+Keywords: Browser issue, system not working, reset browser, browser
+Solution: Open "Control Panel" -> "Internet Options" -> "Advanced Tab" -> Click "Reset". Confirm the action and restart the browser.
+
