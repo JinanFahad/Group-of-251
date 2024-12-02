@@ -4,11 +4,9 @@ import java.util.List;
 
 public class SupportTechnician {
 
-    private List<String> teamMembers;
     private ProblemSolutionFile problemSolutionFile;
 
-    public SupportTechnician(List<String> teamMembers, ProblemSolutionFile problemSolutionFile) {
-        this.teamMembers = teamMembers;
+    public SupportTechnician(ProblemSolutionFile problemSolutionFile) {
         this.problemSolutionFile = problemSolutionFile;
     }
 
@@ -29,8 +27,8 @@ public class SupportTechnician {
             System.out.println("An error occurred while updating the problem.");
         }
     }
-//---------------------------------------------------------------------------------------
-public void deleteProblem(String problemDescription) {
+
+    public void deleteProblem(String problemDescription) {
         try {
             problemSolutionFile.deleteProblem(problemDescription);
             System.out.println("Problem deleted successfully.");

@@ -1,37 +1,39 @@
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Arrays;
 
-
-
 public class main {
 
     public static void main(String[] args) {
-        String filePath = "problems.txt";
-        ProblemSolutionFile problemFile = new ProblemSolutionFile(filePath);
-        KeywordBasedSearchSystem searchSystem = new KeywordBasedSearchSystem(problemFile);
-        List<String> supportTeamMembers = new ArrayList<>();
-        supportTeamMembers.add("Ahmad");
-        supportTeamMembers.add("Bob");
-        SupportTechnician supportTeam = new SupportTechnician(supportTeamMembers, problemFile);
-        Employee employee = new Employee("Sarah Saad", "1829001", searchSystem);
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Problem Management System");
-        System.out.println("Please select your role:");
+        String filePath = "problems.txt"; //file path of text file
+
+        ProblemSolutionFile problemFile = new ProblemSolutionFile(filePath); //create file object 
+
+        KeywordBasedSearchSystem searchSystem = new KeywordBasedSearchSystem(problemFile); //create search system object
+
+        SupportTechnician technician = new SupportTechnician(problemFile); //create technician object
+
+        Employee employee = new Employee(searchSystem); //create employee object
+        Scanner scanner = new Scanner(System.in); //scanner object to obtain user input
+
+        System.out.println("---------- WELCOME TO THE PROBLEM MANAGEMENT SYSTEM ----------");
         System.out.println("1. Employee");
         System.out.println("2. Support Technician");
+        System.out.println("3. Exit");
+        System.out.print("Please select your role:");
         int choice = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
+        // choice no.1 leads to the employee menu
         if (choice == 1) {
             System.out.println("\n--- Employee Searching for a Solution ---");
             System.out.print("Enter the problem description: ");
             String problemDescription = scanner.nextLine();
             employee.requestSolution(problemDescription);
-        } else if (choice == 2) {
+        } 
+        //choice no.2 leads to the technician menu
+        else if (choice == 2) {
             boolean continueRunning = true;
             while (continueRunning) {
                 System.out.println("\n--- Support Technician Menu ---");
@@ -39,10 +41,12 @@ public class main {
                 System.out.println("2. Update a Problem");
                 System.out.println("3. Delete a Problem");
                 System.out.println("4. Exit");
+                System.out.print("Please select an option:");
                 int technicianChoice = scanner.nextInt();
-                scanner.nextLine(); 
+                scanner.nextLine();
 
-                switch (technicianChoice) {
+
+switch (technicianChoice) {
                     case 1:
                         System.out.print("Enter problem description: ");
                         String newDescription = scanner.nextLine();
@@ -52,7 +56,7 @@ public class main {
                         System.out.print("Enter solution: ");
                         String solution = scanner.nextLine();
                         ProblemAndSolution newProblem = new ProblemAndSolution(newDescription, keywords, solution);
-                        supportTeam.addProblem(newProblem);
+                        technician.addProblem(newProblem);
                         break;
                     case 2:
                         System.out.print("Enter the problem description to update: ");
@@ -63,12 +67,12 @@ public class main {
                         System.out.print("Enter new solution: ");
                         String updateSolution = scanner.nextLine();
                         ProblemAndSolution updatedProblem = new ProblemAndSolution(updateDescription, updateKeywords, updateSolution);
-                        supportTeam.updateProblem(updatedProblem);
+                        technician.updateProblem(updatedProblem);
                         break;
                     case 3:
                         System.out.print("Enter the problem description to delete: ");
                         String deleteDescription = scanner.nextLine();
-                        supportTeam.deleteProblem(deleteDescription);
+                        technician.deleteProblem(deleteDescription);
                         break;
                     case 4:
                         continueRunning = false;
@@ -77,13 +81,17 @@ public class main {
                         System.out.println("Invalid choice. Please try again.");
                         break;
                 }
-                
             }
-        } else {
+        } 
+        //user chooses to exit menu
+        else if (choice == 3) {
+            System.out.println("Exiting the system. Goodbye!");
+            return;
+        } 
+        //user inputs a number other than (1,2,3)
+        else {
             System.out.println("Invalid input selected.");
         }
-
-        
         scanner.close();
     }
 }
