@@ -6,10 +6,6 @@ Problem: Changing Passwords
 Keywords: change password, password, security
 Solution: Use one of the following methods: 1) Security Interface (Ctrl + Alt + Delete). 2) Webmail (navigate to Settings -> Change Password). 3) Using the employee services link on the official site.
 
-Problem: Email Working in Offline Mode
-Keywords: email, offline, offline mode
-Solution: Go to the "Send/Receive" tab in Outlook and ensure the "Work Offline" icon is not highlighted.
-
 Problem: Adding Folders in Email Application
 Keywords: add folder, email, email folder
 Solution: Right-click on the main folder in Outlook and select "New Folder" to add a custom folder.
