@@ -42,7 +42,7 @@ public class KeywordBasedSearchSystem {
     }
 
     private List<String> extractKeywords(String description) {
-        String[] keywords = description.toLowerCase().split("\s+");
+        String[] keywords = description.toLowerCase().split("\\s+");
         return Arrays.asList(keywords);
     }
 }
