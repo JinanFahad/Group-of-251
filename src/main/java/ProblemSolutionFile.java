@@ -8,7 +8,8 @@ public class ProblemSolutionFile {
     public ProblemSolutionFile(String filePath) {
         this.PathOfFile = filePath;
     }
-   //-------------------------------------------------------------------------------------------------------      
+   //------------------------------------------------------------------------------------------------------- 
+    
     public List<ProblemAndSolution> readProblems() throws IOException {
         List<ProblemAndSolution> problemList = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader(PathOfFile));
@@ -28,7 +29,8 @@ public class ProblemSolutionFile {
         reader.close();
         return problemList;
     }
-  //-------------------------------------------------------------------------------------------------------   
+  //-------------------------------------------------------------------------------------------------------  
+    
     public void writeProblem(ProblemAndSolution problem) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(PathOfFile, true));
         writer.write("Problem: " + problem.getProblemDescription());
@@ -41,7 +43,8 @@ public class ProblemSolutionFile {
         writer.close();
         
     }
-  //-------------------------------------------------------------------------------------------------------   
+  //------------------------------------------------------------------------------------------------------- 
+    
     public void updateProblem(ProblemAndSolution updatedProblem) throws IOException {
         List<ProblemAndSolution> problemList = readProblems();
         BufferedWriter writer = new BufferedWriter(new FileWriter(PathOfFile));
@@ -65,7 +68,8 @@ public class ProblemSolutionFile {
         writer.close();
        
     }
-//-------------------------------------------------------------------------------------------------------   
+//------------------------------------------------------------------------------------------------------- 
+    
     public List<ProblemAndSolution> searchInFile(String keyword) throws IOException {
         List<ProblemAndSolution> problems = readProblems();
         List<ProblemAndSolution> matchingProblems = new ArrayList<>();
@@ -89,6 +93,7 @@ public class ProblemSolutionFile {
         return matchingProblems;
     }
     //-------------------------------------------------------------------------------------------------------   
+    
     public void deleteProblem(String problemDescription) throws IOException {
         List<ProblemAndSolution> problemList = readProblems();
         BufferedWriter writer = new BufferedWriter(new FileWriter(PathOfFile));
