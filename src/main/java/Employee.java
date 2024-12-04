@@ -3,10 +3,13 @@ import java.io.IOException;
 public class Employee {
 
     private KeywordBasedSearchSystem searchSystem;
-
+    
+    
     public Employee(KeywordBasedSearchSystem searchSystem) {
         this.searchSystem = searchSystem;
     }
+    
+    
 
     public void requestSolution(String problemDescription) {
         try {
