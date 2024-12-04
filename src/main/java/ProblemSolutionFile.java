@@ -39,6 +39,7 @@ public class ProblemSolutionFile {
         writer.newLine();
         writer.newLine();
         writer.close();
+        
     }
   //-------------------------------------------------------------------------------------------------------   
     public void updateProblem(ProblemAndSolution updatedProblem) throws IOException {
@@ -62,6 +63,7 @@ public class ProblemSolutionFile {
             writer.newLine();
         }
         writer.close();
+       
     }
 //-------------------------------------------------------------------------------------------------------   
     public List<ProblemAndSolution> searchInFile(String keyword) throws IOException {
@@ -72,7 +74,6 @@ public class ProblemSolutionFile {
         for (ProblemAndSolution problem : problems) {
             List<String> problemKeywords = problem.getKeywords();
             boolean isMatch = false;
-
 // Iterate through the keywords of each problem and check for matches
             for (String problemKeyword : problemKeywords) {
                 if (problemKeyword.equalsIgnoreCase(lowerKeyword)) {
@@ -80,7 +81,6 @@ public class ProblemSolutionFile {
                     break;  // Exit the loop once a match is found for the current problem
                 }
             }
-
             // Add the problem only if there's a matching keyword
             if (isMatch) {
                 matchingProblems.add(problem);
