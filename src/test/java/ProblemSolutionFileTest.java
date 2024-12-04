@@ -9,14 +9,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ProblemSolutionFileTest {
 
+    
     private ProblemSolutionFile problemSolutionFile;
     private static final String TEST_FILE_PATH = "testProblemSolution.txt";
 
+    
     @BeforeEach
     void setUp() throws IOException {
         problemSolutionFile = new ProblemSolutionFile(TEST_FILE_PATH);
     }
 
+    
     @AfterEach
     void tearDown() {
         File testFile = new File(TEST_FILE_PATH);
@@ -25,6 +28,7 @@ public class ProblemSolutionFileTest {
         }
     }
 
+    
     /**
      * Test writing a problem to the file and then reading it back.
      * Ensures that the written problem matches what is read.
@@ -38,6 +42,7 @@ public class ProblemSolutionFileTest {
         assertEquals("Test Problem", problems.get(0).getProblemDescription());
     }
 
+    
     /**
      * Test reading multiple problems from the file.
      * Ensures that all written problems are read correctly.
@@ -52,6 +57,7 @@ public class ProblemSolutionFileTest {
         assertEquals(2, problems.size());
     }
 
+    
     /**
      * Test updating an existing problem in the file.
      * Ensures that the problem's solution is updated correctly.
@@ -67,6 +73,7 @@ public class ProblemSolutionFileTest {
         assertEquals("Updated Solution", problems.get(0).getSolution(), "The problem solution was not updated correctly");
     }
 
+    
     /**
      * Test searching for a problem by keyword in the file.
      * Ensures that the correct problem is returned when searching by keyword.
@@ -80,6 +87,7 @@ public class ProblemSolutionFileTest {
         assertEquals("Searchable Problem", results.get(0).getProblemDescription());
     }
 
+    
     /**
      * Test deleting a problem from the file.
      * Ensures that the problem is removed and no longer exists in the file.
@@ -92,6 +100,7 @@ public class ProblemSolutionFileTest {
         List<ProblemAndSolution> problems = problemSolutionFile.readProblems();
         assertEquals(0, problems.size());
     }
+    
     
     /**
      * Test deleting a non-existent problem from the file.
@@ -106,6 +115,7 @@ public class ProblemSolutionFileTest {
         assertEquals(1, problems.size());
     }
 
+    
     /**
      * Test searching for a keyword that does not exist.
      * Ensures that no problems are returned for a non-existent keyword.
@@ -118,6 +128,7 @@ public class ProblemSolutionFileTest {
         assertEquals(0, results.size());
     }
 
+    
     /**
      * Test writing and deleting all problems from the file.
      * Ensures that the file is empty after deleting all written problems.
@@ -133,6 +144,7 @@ public class ProblemSolutionFileTest {
         List<ProblemAndSolution> problems = problemSolutionFile.readProblems();
         assertEquals(0, problems.size());
     }
+    
     
 }
 
