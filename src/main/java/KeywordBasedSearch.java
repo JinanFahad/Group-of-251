@@ -2,11 +2,11 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class KeywordBasedSearchSystem {
+public class KeywordBasedSearch {
 
     private ProblemSolutionFile problemSolutionFile;
 
-    public KeywordBasedSearchSystem(ProblemSolutionFile problemSolutionFile) {
+    public KeywordBasedSearch(ProblemSolutionFile problemSolutionFile) {
         this.problemSolutionFile = problemSolutionFile;
     }
 

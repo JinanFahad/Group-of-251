@@ -2,10 +2,10 @@ import java.io.IOException;
 
 public class Employee {
 
-    private KeywordBasedSearchSystem searchSystem;
+    private KeywordBasedSearch searchSystem;
     
     
-    public Employee(KeywordBasedSearchSystem searchSystem) {
+    public Employee(KeywordBasedSearch searchSystem) {
         this.searchSystem = searchSystem;
     }
     

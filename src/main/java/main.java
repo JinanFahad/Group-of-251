@@ -10,7 +10,7 @@ public class main {
 
         ProblemSolutionFile problemFile = new ProblemSolutionFile(filePath); //create file object 
 
-        KeywordBasedSearchSystem searchSystem = new KeywordBasedSearchSystem(problemFile); //create search system object
+        KeywordBasedSearch searchSystem = new KeywordBasedSearch(problemFile); //create search system object
 
         SupportTechnician technician = new SupportTechnician(problemFile); //create technician object
 
